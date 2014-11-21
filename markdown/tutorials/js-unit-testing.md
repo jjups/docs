@@ -117,3 +117,15 @@ The [`karma-sauce-example`](https://github.com/saucelabs/karma-sauce-example.git
 ## Conclusion
 
 You can take the Karma config files resulting from this tutorial and add them to your project, you will simply need to modify the `src` and `test` config properties to point at your files. If you are using grunt or gulp you can also use the the [grunt plugin](https://github.com/karma-runner/grunt-karma) or [gulp integration](https://github.com/karma-runner/gulp-karma). Happy testing!
+
+Or, use whichever tools you prefer with our simple REST API. Here's an example request:
+
+curl -X POST https://saucelabs.com/rest/v1/$SAUCE_USERNAME/js-tests \
+    -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY \
+    -d platforms='[["Windows 8", "internet explorer", "10"],
+                   ["OS X 10.8", "safari", "6"]]' \
+    -d url="https://saucelabs.com/test_helpers/front_tests/index.html" \
+    -d framework=jasmine
+
+See our complete REST API documentation for more info.
+
